@@ -1,0 +1,42 @@
+[
+  {
+    "id": "project-1",
+    "title": "Bank Branch Performance Dashboard",
+    "category": "Data Analytics",
+    "shortDescription": "Analyzed banking branch KPIs — deposits, loans, profitability, and complaints — with an interactive Streamlit dashboard and sentiment analysis.",
+    "problem": "Branch managers lacked a unified view of financial performance across deposits, loans, expenses, revenue, and customer satisfaction — making it hard to spot underperforming branches quickly.",
+    "approach": "Loaded and cleaned multi-branch transactional data using Pandas. Calculated key KPIs: profit margin, loan-to-deposit ratio, and complaint rate. Built an interactive Streamlit dashboard for real-time filtering and added TextBlob-powered sentiment analysis on customer feedback comments.",
+    "toolsUsed": ["Python", "Pandas", "Streamlit", "TextBlob", "Matplotlib"],
+    "keyInsight": "Identified 3 underperforming branches with negative profit margins — flagging them for cost-optimization reviews that reduced operational expenses.",
+    "chartType": "bar",
+    "chartData": {
+      "labels": ["Deposits", "Loans", "Revenue", "Expenses", "Complaints"],
+      "values": [87, 73, 91, 55, 34],
+      "unit": "KPI Performance Score"
+    },
+    "githubLink": "https://github.com/chiraggrow",
+    "dashboardLink": "https://github.com/chiraggrow",
+    "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+    "thumbnailAlt": "Financial analytics dashboard visualization"
+  },
+  {
+    "id": "project-2",
+    "title": "Weather Monitor (IoT Dashboard)",
+    "category": "Data Analytics",
+    "shortDescription": "Designed a real-time IoT weather station that streams live temperature & humidity data to a mobile app via Blynk.",
+    "problem": "No low-cost, real-time solution existed for continuously monitoring indoor room climate data on a mobile device without expensive commercial sensors.",
+    "approach": "Built an Arduino-based IoT weather station using DHT11 temperature/humidity sensors. Integrated with the Blynk IoT platform to stream live sensor readings to a mobile dashboard in real-time. Calibrated sensor thresholds for alert notifications.",
+    "toolsUsed": ["Arduino", "IoT", "Blynk", "C++", "DHT11 Sensor"],
+    "keyInsight": "Achieved live sensor data streaming with <2 second latency to mobile, demonstrating a complete data pipeline from physical sensor to digital dashboard.",
+    "chartType": "line",
+    "chartData": {
+      "labels": ["6AM", "9AM", "12PM", "3PM", "6PM", "9PM"],
+      "values": [22, 24, 29, 31, 28, 25],
+      "unit": "Temperature (°C)"
+    },
+    "githubLink": "https://github.com/chiraggrow",
+    "dashboardLink": "https://github.com/chiraggrow",
+    "thumbnail": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&auto=format&fit=crop&q=80",
+    "thumbnailAlt": "Data charts on a computer screen"
+  }
+]

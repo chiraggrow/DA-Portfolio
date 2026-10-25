@@ -1,126 +1,74 @@
-# Modern Data Analyst & Future Data Scientist Portfolio
+# Chirag Mittal — Data Analyst Portfolio
 
-A production-ready, single-page portfolio website tailored for **Data Analysts** and built to effortlessly expand into **Data Science & Machine Learning**.
+A responsive, no-build portfolio for Chirag Mittal, Data Analyst and future Data Scientist. It uses semantic HTML, modular CSS, native JavaScript ES modules, JSON project records, native canvas charts, and an optional Three.js scene.
 
-Designed with modern aesthetics: deep navy/charcoal glassmorphism, electric teal and violet neon accents, an interactive Three.js 3D data-bar matrix hero scene, 3D card tilt effects, dynamic filtering, and interactive modal charts.
+## Run locally
 
----
+The site fetches `data/projects.json` and uses ES modules, so serve it over HTTP rather than opening `index.html` with `file://`.
 
-## 🚀 Features
-
-- **Interactive 3D Hero Scene**: Lightweight Three.js holographic 3D data bar cluster and floating particle cloud with gentle sine-wave pulsing and mouse parallax reaction.
-- **Performance Optimized**:
-  - Automatically pauses rendering when off-screen (via `IntersectionObserver`) or when the browser tab is hidden.
-  - Capped at `devicePixelRatio = 2` to prevent GPU drain.
-  - Full fallback for `prefers-reduced-motion: reduce`.
-  - Zero heavy charting libraries: ultra-fast, native HTML5 canvas rendering for bar, line, and donut charts.
-- **Data-Driven Projects**: All projects are loaded from a single editable `PROJECTS_DATA` JavaScript array at the top of the script.
-- **Interactive Detail Modal**: Clicking any project card opens a glassmorphism modal with problem statement, methodology, quantified results, and live interactive canvas charts (Bar, Line, or Donut).
-- **Future-Ready Category Filters**:
-  - `All Projects`
-  - `Data Analytics`
-  - `Machine Learning (Coming Soon)`
-  - `Data Science (Coming Soon)`
-- **Dark / Light Theme**: Instant toggle with smooth color transitions and persistent state in `localStorage`.
-- **Complete Sections**:
-  1. Hero with live telemetry KPI card
-  2. About section with key stats (years exp, dashboards built, rows analyzed)
-  3. Categorized Skills with animated proficiency meters (SQL, Python, Power BI, Tableau, Excel, Statistics)
-  4. Projects with 3D perspective tilt
-  5. Experience Timeline highlighting quantified metrics and business impact
-  6. Certifications & Education
-  7. Contact Form (with mailto fallback or Formspree integration) & Social links
-  8. Responsive Footer & Back-to-top floating button
-
----
-
-## 🛠️ Quick Start (Zero Build Required)
-
-This website is built with vanilla HTML, CSS, and JavaScript. No Node.js build step or bundler is required.
-
-### Option 1: Direct File Opening
-Double-click `index.html` to open it directly in your browser.
-
-### Option 2: Local HTTP Server (Recommended)
-Using Python:
 ```bash
+cd DA-resume
 python3 -m http.server 3000
 ```
-Then visit `http://localhost:3000`.
 
-Using Node.js:
+Open [http://localhost:3000](http://localhost:3000). Node.js users can instead run `npx serve .`.
+
+## Structure
+
+```text
+.
+├── index.html
+├── css/
+│   ├── base.css          # Theme tokens, document defaults, and accessibility
+│   ├── layout.css        # Page layout, responsive rules, and effects
+│   ├── components.css    # Buttons, cards, modal, and navigation
+│   └── style.css         # Existing section styles imported by layout.css
+├── js/
+│   ├── main.js           # App initialization and project-data loading
+│   ├── three-scene.js    # Lazy-loaded Three.js scene
+│   ├── projects.js       # Reusable project-card rendering
+│   ├── charts.js         # Native canvas charts (no chart dependency)
+│   ├── animations.js     # Reveal, tilt, cursor, and count-up effects
+│   ├── data.js           # Personal profile, skills, and certifications
+│   ├── filters.js        # Skill and project filtering/search
+│   ├── modal.js          # Accessible project detail modal
+│   ├── navigation.js     # Theme, mobile menu, scroll progress
+│   └── utils.js          # Profile content and link population
+├── data/
+│   └── projects.json     # Project records; add future Data Science work here
+└── assets/
+    ├── Chirag_Mittal_Resume.pdf
+    ├── favicon-32.png
+    ├── favicon-192.png
+    └── favicon-512.png
+```
+
+The existing section and component CSS is retained in `css/style.css`; `css/layout.css` composes it with the responsive and animation styles. The requested entry-point stylesheets are loaded from `index.html`.
+
+## Customize
+
+- **Personal information:** edit `OWNER_CONFIG` near the top of `js/data.js`. The resume and favicon assets are in `assets/`.
+- **Accent color:** change `--accent-primary`, `--accent-secondary`, and `--accent-glow` in `css/variables.css`.
+- **Projects:** edit or append objects in `data/projects.json`. Each record has a `category` (`Data Analytics`, `Data Science`, or another category), description, problem, approach, tool list, quantified insight, chart type/data, links, and thumbnail/alt text. Supported chart types are `bar`, `line`, and `donut`. Project cards and detail modals render from this same schema. Current thumbnails use Unsplash's `auto=format` delivery so supported browsers receive optimized formats.
+
+Serve the site over HTTP after editing so the JSON fetch and ES module imports work. Three.js is imported on demand from the pinned `three@0.170.0` CDN URL; if WebGL is unavailable, motion is reduced, or the device is low-end/data-saving, the page remains usable with its CSS gradient background. Charts use the built-in Canvas API.
+
+## Accessibility and performance
+
+- Keyboard-operable navigation, project cards, and modal; visible focus styling; status announcements for search and contact.
+- Honors `prefers-reduced-motion`, pauses Three.js rendering when hidden or no page section is visible, and caps renderer pixel ratio at 2.
+- Project thumbnails are lazy-loaded. The Three.js module is downloaded only when the hero nears the viewport.
+- Responsive layouts cover narrow mobile (360px), tablet (768px), and desktop (1440px) widths.
+
+## Push to GitHub
+
+From this folder, create a repository on GitHub and use its URL in the first command:
+
 ```bash
-npx serve .
+git add index.html README.md css js data assets
+git commit -m "Refactor and upgrade analyst portfolio"
+git remote add origin https://github.com/<YOUR-USERNAME>/<YOUR-REPOSITORY>.git
+git push -u origin HEAD
 ```
 
----
-
-## ✏️ How to Customize
-
-All custom settings are clearly marked with comments in `index.html`:
-
-### 1. Personal Information (`OWNER_CONFIG`)
-Search for `OWNER_CONFIG` around line 710 of `index.html`:
-```javascript
-const OWNER_CONFIG = {
-  name: "Your Full Name",
-  title: "Data Analyst",
-  futureTitle: "Future Data Scientist",
-  location: "San Francisco, CA",
-  bioShort: "Transforming complex datasets into clear, high-impact business decisions...",
-  bioAbout: "Analytical thinker with hands-on experience in exploratory data analysis...",
-  education: "B.S. in Computer Science / Statistics, 2023",
-  email: "your.name@example.com",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  github: "https://github.com/yourusername",
-  resumeUrl: "/assets/resume.pdf"
-};
-```
-
-### 2. Projects Array (`PROJECTS_DATA`)
-Search for `PROJECTS_DATA` around line 730 of `index.html`. You can add as many projects as you want:
-```javascript
-{
-  id: "project-unique-id",
-  title: "Project Title",
-  category: "Data Analytics", // or "Machine Learning" / "Data Science"
-  shortDescription: "One-line summary of what you built and delivered.",
-  problem: "The business bottleneck or question being addressed.",
-  approach: "ETL pipelines, data cleaning, modeling, or dashboard architecture.",
-  toolsUsed: ["PostgreSQL", "Power BI", "Python"],
-  keyInsight: "Quantified metric (e.g., Saved $140K or reduced latency by 35%).",
-  chartType: "bar", // Options: "bar", "line", or "donut"
-  chartData: {
-    labels: ["Q1", "Q2", "Q3", "Q4"],
-    values: [45, 60, 75, 90],
-    unit: "Sales Index"
-  },
-  githubLink: "https://github.com/...",
-  dashboardLink: "https://public.tableau.com/...",
-  thumbnail: "https://images.unsplash.com/photo-..."
-}
-```
-
-### 3. Change Accent Colors
-In the `<style>` block in `<head>`, look for `:root`:
-```css
-:root {
-  /* Electric Teal (Default) */
-  --accent-primary: #00f2fe;
-  --accent-secondary: #4facfe;
-  --accent-glow: rgba(0, 242, 254, 0.35);
-  
-  /* Or change to Electric Violet:
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #a78bfa;
-  --accent-glow: rgba(139, 92, 246, 0.35);
-  */
-}
-```
-
----
-
-## 🚢 Deploying to the Web
-
-- **GitHub Pages**: Push this folder to a GitHub repository, go to `Settings > Pages`, and select `Branch: main / root`.
-- **Vercel / Netlify**: Drag-and-drop the folder or connect your Git repository. It will deploy instantly with zero configuration.
+If an `origin` remote already exists, skip `git remote add origin ...`. For GitHub Pages, configure Pages in repository **Settings → Pages** and deploy from the root of the chosen branch.

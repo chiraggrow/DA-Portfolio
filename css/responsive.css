@@ -1,0 +1,90 @@
+@media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .about-grid, .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+      }
+      .about-grid > *, .contact-grid > * {
+        min-width: 0;
+      }
+      .hero-metric-card {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .cert-edu-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border-subtle);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.25rem;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .section-spacing {
+        padding: 4.5rem 0;
+      }
+      .section-title {
+        font-size: 1.85rem;
+      }
+      .about-details-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .stats-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .contact-item > div {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .timeline::before {
+        left: 15px;
+      }
+      .timeline-item {
+        padding-left: 45px;
+      }
+      .timeline-node {
+        left: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      #hero-canvas-container {
+        display: none !important;
+      }
+      .hero-section {
+        background: radial-gradient(circle at 70% 30%, rgba(0, 242, 254, 0.15) 0%, transparent 60%);
+      }
+    }

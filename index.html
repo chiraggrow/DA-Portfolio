@@ -7,7 +7,7 @@
   <!-- ===================================================================
        SEO & SOCIAL META TAGS
        =================================================================== -->
-  <title>Chirag Mittal | Data Analyst & Future Data Scientist</title>
+  <title>Chirag Mittal | Data Analyst &amp; Future Data Scientist</title>
   <meta name="description" content="Portfolio of Chirag Mittal, Data Analyst specializing in Python, SQL, Pandas, Power BI, and Streamlit. Transforming complex data into actionable business intelligence.">
   <meta name="keywords" content="Data Analyst, Portfolio, Python, SQL, Power BI, Tableau, Data Science, Business Intelligence, Statistics">
   <meta name="author" content="Chirag Mittal">
@@ -15,1440 +15,33 @@
   
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourportfolio.com">
   <meta property="og:title" content="Chirag Mittal - Data Analyst Portfolio">
   <meta property="og:description" content="Interactive portfolio featuring data analytics dashboards, predictive modeling explorations, and business intelligence projects.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&amp;auto=format&amp;fit=crop&amp;q=80">
 
   <!-- Fonts: Preconnect & Geometric Sans + Clean Body Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-512.png">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
 
-  <!-- Three.js (Optimized via CDN for lightweight 3D data scene) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-
-  <style>
-    /* ===================================================================
-       1. DESIGN SYSTEM & CSS VARIABLES (EASY EDITING)
-       =================================================================== */
-    :root {
-      /* EDIT ACCENT COLOR HERE: Electric Teal / Cyan */
-      --accent-primary: #00f2fe;
-      --accent-secondary: #4facfe;
-      --accent-glow: rgba(0, 242, 254, 0.35);
-      --accent-violet: #8b5cf6;
-      --accent-emerald: #10b981;
-      
-      /* Dark Theme (Default) */
-      --bg-base: #060911;
-      --bg-surface: #0c1220;
-      --bg-surface-elevated: #131b2e;
-      --bg-glass: rgba(12, 18, 32, 0.72);
-      --bg-glass-card: rgba(19, 27, 46, 0.6);
-      
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(0, 242, 254, 0.5);
-      
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-faint: #64748b;
-      
-      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-      --glow-shadow: 0 0 25px var(--accent-glow);
-      
-      --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-full: 9999px;
-      
-      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    [data-theme="light"] {
-      --bg-base: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-surface-elevated: #f1f5f9;
-      --bg-glass: rgba(255, 255, 255, 0.82);
-      --bg-glass-card: rgba(255, 255, 255, 0.85);
-      
-      --border-subtle: rgba(0, 0, 0, 0.08);
-      --border-focus: rgba(0, 242, 254, 0.8);
-      
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --text-faint: #94a3b8;
-      
-      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
-      --glow-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
-    }
-
-    /* Reset & Base Setup */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background-color: var(--bg-base);
-      color: var(--text-main);
-      line-height: 1.65;
-      overflow-x: hidden;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Background decorative ambient gradient mesh */
-    body::before {
-      content: "";
-      position: fixed;
-      top: -20%;
-      left: 10%;
-      width: 70vw;
-      height: 70vw;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0, 242, 254, 0.04) 0%, rgba(139, 92, 246, 0.03) 40%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Typography Defaults */
-    h1, h2, h3, h4, h5 {
-      font-family: var(--font-heading);
-      color: var(--text-main);
-      line-height: 1.25;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      max-width: 75ch; /* Comfortable reading length */
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: var(--transition-smooth);
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      background: none;
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--accent-primary);
-      outline-offset: 3px;
-    }
-
-    /* Utility Container */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-spacing {
-      padding: 6.5rem 0;
-    }
-
-    /* Section Header */
-    .section-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 500;
-      padding: 0.35rem 0.9rem;
-      border-radius: var(--radius-full);
-      background: rgba(0, 242, 254, 0.08);
-      color: var(--accent-primary);
-      border: 1px solid rgba(0, 242, 254, 0.25);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      font-size: 2.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Gradient Text */
-    .gradient-text {
-      background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-violet) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      padding: 0.85rem 1.6rem;
-      border-radius: var(--radius-md);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: var(--transition-smooth);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-      color: #040810;
-      box-shadow: 0 4px 20px var(--accent-glow);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0, 242, 254, 0.5);
-    }
-
-    .btn-secondary {
-      background: var(--bg-surface-elevated);
-      color: var(--text-main);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--accent-primary);
-      color: var(--accent-primary);
-      transform: translateY(-2px);
-    }
-
-    .btn-sm {
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
-      border-radius: var(--radius-sm);
-    }
-
-    /* ===================================================================
-       2. NAVIGATION BAR
-       =================================================================== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: var(--bg-glass);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: var(--transition-smooth);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: var(--radius-sm);
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-violet));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #040810;
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-link {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      position: relative;
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--accent-primary);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    /* Theme Toggle */
-    .theme-toggle {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-surface-elevated);
-      color: var(--text-muted);
-      transition: var(--transition-smooth);
-    }
-
-    .theme-toggle:hover {
-      border-color: var(--accent-primary);
-      color: var(--accent-primary);
-    }
-
-    .theme-icon-light, .theme-icon-dark {
-      width: 20px;
-      height: 20px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    [data-theme="dark"] .theme-icon-dark { display: none; }
-    [data-theme="dark"] .theme-icon-light { display: block; }
-    [data-theme="light"] .theme-icon-light { display: none; }
-    [data-theme="light"] .theme-icon-dark { display: block; }
-
-    /* Mobile Menu Toggle */
-    .mobile-menu-btn {
-      display: none;
-      width: 40px;
-      height: 40px;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-main);
-    }
-
-    /* ===================================================================
-       3. HERO SECTION WITH 3D CANVAS & METRICS
-       =================================================================== */
-    .hero-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding-top: 5rem;
-      padding-bottom: 3rem;
-      overflow: hidden;
-    }
-
-    /* 3D Canvas Container */
-    #hero-canvas-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: auto;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 3rem;
-      position: relative;
-      z-index: 2;
-      pointer-events: none; /* Let canvas capture mouse unless on interactive elements */
-    }
-
-    .hero-content, .hero-metric-card {
-      pointer-events: auto;
-    }
-
-    .hero-pretitle {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.85rem;
-      font-family: var(--font-mono);
-      color: var(--accent-primary);
-      margin-bottom: 1.25rem;
-    }
-
-    .status-pulse {
-      width: 8px;
-      height: 8px;
-      background-color: var(--accent-emerald);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-emerald);
-      animation: pulse 2s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
-      line-height: 1.1;
-    }
-
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .tag-badge {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      background: var(--bg-surface-elevated);
-      color: var(--text-muted);
-      padding: 0.3rem 0.75rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-subtle);
-    }
-
-    /* Hero Floating 3D Data Card */
-    .hero-metric-card {
-      background: var(--bg-glass-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      box-shadow: var(--card-shadow);
-      position: relative;
-      overflow: hidden;
-      transform-style: preserve-3d;
-      transition: transform 0.2s ease, border-color 0.3s ease;
-    }
-
-    .hero-metric-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-primary), var(--accent-violet));
-    }
-
-    .metric-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .metric-badge {
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      color: var(--accent-primary);
-      background: rgba(0, 242, 254, 0.1);
-      padding: 0.25rem 0.65rem;
-      border-radius: var(--radius-sm);
-    }
-
-    .metric-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 1.25rem;
-    }
-
-    .metric-val {
-      font-size: 2.2rem;
-      font-weight: 800;
-      font-family: var(--font-heading);
-      line-height: 1;
-    }
-
-    .metric-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .metric-pill-positive {
-      font-size: 0.8rem;
-      color: var(--accent-emerald);
-      font-weight: 600;
-      background: rgba(16, 185, 129, 0.1);
-      padding: 0.2rem 0.5rem;
-      border-radius: var(--radius-sm);
-    }
-
-    /* Mini Data Bar Chart Animation */
-    .mini-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      height: 60px;
-      padding-top: 10px;
-      border-bottom: 1px dashed var(--border-subtle);
-      padding-bottom: 4px;
-    }
-
-    .mini-bar {
-      flex: 1;
-      background: linear-gradient(180deg, var(--accent-primary) 0%, rgba(0, 242, 254, 0.15) 100%);
-      border-radius: 3px 3px 0 0;
-      transition: height 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    /* ===================================================================
-       4. ABOUT & STATS SECTION
-       =================================================================== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .about-bio {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-    }
-
-    .about-details-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-      list-style: none;
-    }
-
-    .about-detail-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .detail-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      font-family: var(--font-mono);
-      color: var(--text-faint);
-      letter-spacing: 0.05em;
-    }
-
-    .detail-val {
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    /* Stats Grid */
-    .stats-card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-
-    .stat-card {
-      background: var(--bg-glass-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      text-align: center;
-      transition: var(--transition-smooth);
-    }
-
-    .stat-card:hover {
-      border-color: var(--accent-primary);
-      transform: translateY(-4px);
-      box-shadow: var(--glow-shadow);
-    }
-
-    .stat-number {
-      font-size: 2.25rem;
-      font-weight: 800;
-      font-family: var(--font-heading);
-      color: var(--accent-primary);
-      margin-bottom: 0.35rem;
-    }
-
-    .stat-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* ===================================================================
-       5. SKILLS SECTION (Categorized Interactive Grid)
-       =================================================================== */
-    .skills-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      padding: 0.6rem 1.2rem;
-      border-radius: var(--radius-full);
-      font-size: 0.88rem;
-      font-weight: 600;
-      background: var(--bg-surface-elevated);
-      color: var(--text-muted);
-      border: 1px solid var(--border-subtle);
-      transition: var(--transition-smooth);
-    }
-
-    .tab-btn:hover, .tab-btn.active {
-      background: rgba(0, 242, 254, 0.12);
-      color: var(--accent-primary);
-      border-color: var(--accent-primary);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .skill-card {
-      background: var(--bg-glass-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      transition: var(--transition-smooth);
-    }
-
-    .skill-card:hover {
-      border-color: var(--accent-primary);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-    }
-
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-
-    .skill-name {
-      font-weight: 600;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .skill-level-text {
-      font-size: 0.85rem;
-      font-family: var(--font-mono);
-      color: var(--accent-primary);
-    }
-
-    .skill-bar-bg {
-      width: 100%;
-      height: 7px;
-      background: var(--bg-surface-elevated);
-      border-radius: var(--radius-full);
-      overflow: hidden;
-    }
-
-    .skill-bar-fill {
-      height: 100%;
-      border-radius: var(--radius-full);
-      background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
-      width: 0%;
-      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* ===================================================================
-       6. PROJECTS SECTION (Data-Driven, 3D Tilt Cards)
-       =================================================================== */
-    .filter-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-chip {
-      padding: 0.55rem 1.25rem;
-      border-radius: var(--radius-full);
-      font-size: 0.85rem;
-      font-weight: 600;
-      background: var(--bg-surface-elevated);
-      color: var(--text-muted);
-      border: 1px solid var(--border-subtle);
-      transition: var(--transition-smooth);
-    }
-
-    .filter-chip:hover, .filter-chip.active {
-      background: var(--accent-primary);
-      color: #040810;
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 15px var(--accent-glow);
-    }
-
-    .filter-chip.badge-future {
-      position: relative;
-      border-style: dashed;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-      perspective: 1200px;
-    }
-
-    /* Project Card with 3D Tilt */
-    .project-card {
-      background: var(--bg-glass-card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.25s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      position: relative;
-      transform-style: preserve-3d;
-    }
-
-    .project-card:hover {
-      border-color: rgba(0, 242, 254, 0.45);
-      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
-    }
-
-    .project-thumb {
-      height: 200px;
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      background: var(--bg-surface-elevated);
-    }
-
-    .project-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .project-card:hover .project-thumb img {
-      transform: scale(1.05);
-    }
-
-    .project-badge-cat {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(6, 9, 17, 0.85);
-      backdrop-filter: blur(8px);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--accent-primary);
-      border: 1px solid rgba(0, 242, 254, 0.3);
-      padding: 0.25rem 0.6rem;
-      border-radius: var(--radius-sm);
-    }
-
-    .project-body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .project-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-      color: var(--text-main);
-    }
-
-    .project-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-      flex: 1;
-    }
-
-    .project-insight-box {
-      background: rgba(0, 242, 254, 0.06);
-      border-left: 3px solid var(--accent-primary);
-      padding: 0.65rem 0.9rem;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      font-size: 0.85rem;
-      color: var(--text-main);
-      margin-bottom: 1.25rem;
-    }
-
-    .project-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .tool-chip {
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      background: var(--bg-surface-elevated);
-      color: var(--text-muted);
-      padding: 0.2rem 0.55rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .project-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .project-btn-detail {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--accent-primary);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    /* Future/Coming Soon Card */
-    .project-card-coming-soon {
-      border: 1px dashed rgba(139, 92, 246, 0.35);
-      background: rgba(139, 92, 246, 0.03);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 3rem 2rem;
-      border-radius: var(--radius-lg);
-    }
-
-    .coming-soon-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(139, 92, 246, 0.15);
-      color: var(--accent-violet);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-
-    /* ===================================================================
-       7. PROJECT DETAIL MODAL (With Interactive Chart)
-       =================================================================== */
-    .modal-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(4, 7, 14, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .modal-backdrop.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-window {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      max-width: 780px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
-      position: relative;
-      transform: scale(0.94) translateY(20px);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .modal-backdrop.open .modal-window {
-      transform: scale(1) translateY(0);
-    }
-
-    .modal-header {
-      padding: 1.75rem 2rem;
-      border-bottom: 1px solid var(--border-subtle);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      position: sticky;
-      top: 0;
-      background: var(--bg-surface);
-      z-index: 5;
-    }
-
-    .modal-close-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--bg-surface-elevated);
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition-smooth);
-    }
-
-    .modal-close-btn:hover {
-      background: var(--accent-primary);
-      color: #040810;
-    }
-
-    .modal-body {
-      padding: 2rem;
-    }
-
-    .modal-section-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      font-family: var(--font-mono);
-      color: var(--accent-primary);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .modal-text {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    /* Modal Interactive Chart Container */
-    .modal-chart-box {
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .modal-chart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .chart-canvas-wrapper {
-      position: relative;
-      width: 100%;
-      height: 220px;
-    }
-
-    .modal-footer-actions {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border-subtle);
-      flex-wrap: wrap;
-    }
-
-    /* ===================================================================
-       8. EXPERIENCE TIMELINE
-       =================================================================== */
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 1rem 0;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 20px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-violet) 100%);
-      opacity: 0.4;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 60px;
-      margin-bottom: 2.5rem;
-    }
-
-    .timeline-node {
-      position: absolute;
-      left: 12px;
-      top: 4px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--bg-base);
-      border: 3px solid var(--accent-primary);
-      box-shadow: 0 0 10px var(--accent-glow);
-    }
-
-    .timeline-card {
-      background: var(--bg-glass-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      transition: var(--transition-smooth);
-    }
-
-    .timeline-card:hover {
-      border-color: var(--accent-primary);
-      transform: translateX(5px);
-    }
-
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-role {
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-
-    .timeline-date {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent-primary);
-      background: rgba(0, 242, 254, 0.08);
-      padding: 0.2rem 0.6rem;
-      border-radius: var(--radius-sm);
-    }
-
-    .timeline-company {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 0.9rem;
-      font-weight: 500;
-    }
-
-    .timeline-achievements {
-      list-style-type: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .timeline-achievements li {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      position: relative;
-      padding-left: 1.25rem;
-    }
-
-    .timeline-achievements li::before {
-      content: "▹";
-      position: absolute;
-      left: 0;
-      color: var(--accent-primary);
-      font-size: 1rem;
-    }
-
-    /* ===================================================================
-       9. CERTIFICATIONS & EDUCATION
-       =================================================================== */
-    .cert-edu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .cert-card {
-      background: var(--bg-glass-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
-      transition: var(--transition-smooth);
-    }
-
-    .cert-card:hover {
-      border-color: var(--accent-primary);
-      transform: translateY(-3px);
-      box-shadow: var(--glow-shadow);
-    }
-
-    .cert-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: rgba(0, 242, 254, 0.1);
-      color: var(--accent-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .cert-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .cert-issuer {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
-
-    /* ===================================================================
-       10. CONTACT SECTION
-       =================================================================== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 3.5rem;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: var(--bg-glass-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      transition: var(--transition-smooth);
-    }
-
-    .contact-item:hover {
-      border-color: var(--accent-primary);
-      transform: translateX(4px);
-    }
-
-    .contact-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: var(--radius-sm);
-      background: rgba(0, 242, 254, 0.1);
-      color: var(--accent-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    /* Contact Form */
-    .contact-form-card {
-      background: var(--bg-glass-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 2.25rem;
-      box-shadow: var(--card-shadow);
-    }
-
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      border-radius: var(--radius-sm);
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
-      font-family: inherit;
-      font-size: 0.95rem;
-      transition: var(--transition-smooth);
-    }
-
-    .form-control:focus {
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 10px var(--accent-glow);
-    }
-
-    textarea.form-control {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-status {
-      margin-top: 1rem;
-      padding: 0.75rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.9rem;
-      display: none;
-    }
-
-    .form-status.success {
-      display: block;
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-
-    /* ===================================================================
-       11. FOOTER
-       =================================================================== */
-    .footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 2.5rem 0;
-      background: var(--bg-surface);
-      text-align: center;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .footer-copy {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .footer-socials {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition-smooth);
-    }
-
-    .social-btn:hover {
-      color: var(--accent-primary);
-      border-color: var(--accent-primary);
-      transform: translateY(-2px);
-    }
-
-    /* Back To Top Floating Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-subtle);
-      color: var(--accent-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition-smooth);
-      z-index: 90;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      background: var(--accent-primary);
-      color: #040810;
-      transform: translateY(-3px);
-    }
-
-    /* ===================================================================
-       12. RESPONSIVE BREAKPOINTS (Mobile-First Polish)
-       =================================================================== */
-    @media (max-width: 992px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-      .about-grid, .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-      .hero-metric-card {
-        max-width: 480px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: var(--bg-surface);
-        border-bottom: 1px solid var(--border-subtle);
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1.25rem;
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      .mobile-menu-btn {
-        display: flex;
-      }
-      .section-spacing {
-        padding: 4.5rem 0;
-      }
-      .section-title {
-        font-size: 1.85rem;
-      }
-      .about-details-list {
-        grid-template-columns: 1fr;
-      }
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .timeline::before {
-        left: 15px;
-      }
-      .timeline-item {
-        padding-left: 45px;
-      }
-      .timeline-node {
-        left: 8px;
-      }
-    }
-
-    /* Accessibility: Respect Reduced Motion */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      #hero-canvas-container {
-        display: none !important;
-      }
-      .hero-section {
-        background: radial-gradient(circle at 70% 30%, rgba(0, 242, 254, 0.15) 0%, transparent 60%);
-      }
-    }
-  </style>
 </head>
 <body>
+  <div class="site-progress" aria-hidden="true"></div>
+  <div class="page-loader" id="page-loader" role="status" aria-label="Loading portfolio"><span aria-hidden="true"></span></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div id="site-scene" aria-hidden="true"></div>
 
   <!-- ===================================================================
        NAVBAR
        =================================================================== -->
+  <a class="visually-hidden" href="#main-content">Skip to content</a>
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#hero" class="nav-brand" aria-label="Home">
@@ -1456,14 +49,18 @@
         <span id="nav-owner-name">Chirag Mittal</span>
       </a>
 
+      <nav aria-label="Primary navigation">
       <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#insights" class="nav-link">Insights</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      </nav>
 
       <div class="nav-actions">
         <!-- Theme Toggle -->
@@ -1476,7 +73,7 @@
 
         <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
 
-        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -1486,6 +83,7 @@
   <!-- ===================================================================
        HERO SECTION WITH 3D THREE.JS DATA SCENE
        =================================================================== -->
+  <main id="main-content">
   <section class="hero-section" id="hero">
     <!-- 3D Three.js Interactive Canvas Container -->
     <div id="hero-canvas-container" aria-hidden="true"></div>
@@ -1543,16 +141,16 @@
         </div>
         <!-- Animated Mini Bar Distribution -->
         <div class="mini-chart" id="mini-bars-container">
-          <div class="mini-bar" style="height: 45%;"></div>
-          <div class="mini-bar" style="height: 65%;"></div>
-          <div class="mini-bar" style="height: 85%;"></div>
-          <div class="mini-bar" style="height: 55%;"></div>
-          <div class="mini-bar" style="height: 95%;"></div>
-          <div class="mini-bar" style="height: 70%;"></div>
-          <div class="mini-bar" style="height: 90%;"></div>
-          <div class="mini-bar" style="height: 80%;"></div>
+          <div class="mini-bar"></div>
+          <div class="mini-bar"></div>
+          <div class="mini-bar"></div>
+          <div class="mini-bar"></div>
+          <div class="mini-bar"></div>
+          <div class="mini-bar"></div>
+          <div class="mini-bar"></div>
+          <div class="mini-bar"></div>
         </div>
-        <div style="margin-top: 1rem; display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-faint); font-family: var(--font-mono);">
+        <div class="mini-chart-labels">
           <span>DATA MODELS: 14 ACTIVE</span>
           <span>QUERIES OPTIMIZED: 250+</span>
         </div>
@@ -1592,7 +190,7 @@
             </li>
             <li class="about-detail-item">
               <span class="detail-label">Specialization</span>
-              <span class="detail-val">EDA, Dashboards & Generative AI</span>
+              <span class="detail-val">EDA, Dashboards &amp; Generative AI</span>
             </li>
           </ul>
 
@@ -1628,7 +226,7 @@
   <!-- ===================================================================
        SKILLS SECTION (Interactive Categorized Cards)
        =================================================================== -->
-  <section class="section-spacing" id="skills" style="background: var(--bg-surface);">
+  <section class="section-spacing section-surface" id="skills">
     <div class="container">
       <div class="section-header">
         <span class="badge-pill">Capabilities</span>
@@ -1639,14 +237,17 @@
       <!-- Skill Category Filter Tabs -->
       <div class="skills-tabs" id="skill-tabs">
         <button class="tab-btn active" data-category="all">All Skills</button>
-        <button class="tab-btn" data-category="query">SQL & Databases</button>
-        <button class="tab-btn" data-category="bi">BI & Visualization</button>
-        <button class="tab-btn" data-category="code">Python & AI</button>
-        <button class="tab-btn" data-category="stats">Analytics & Stats</button>
+        <button class="tab-btn" data-category="query">SQL &amp; Databases</button>
+        <button class="tab-btn" data-category="bi">BI &amp; Visualization</button>
+        <button class="tab-btn" data-category="code">Python &amp; AI</button>
+        <button class="tab-btn" data-category="stats">Analytics &amp; Stats</button>
       </div>
 
       <div class="skills-grid" id="skills-container">
         <!-- Injected via JavaScript -->
+      </div>
+      <div class="skills-orbit" aria-label="Core tools in the analytics toolkit">
+        <span>SQL</span><span>Python</span><span>Power BI</span><span>Excel</span><span>Pandas</span><span>Streamlit</span><span>Statistics</span><span>Generative AI</span>
       </div>
     </div>
   </section>
@@ -1666,13 +267,19 @@
       <div class="filter-wrapper" id="project-filters">
         <button class="filter-chip active" data-filter="all">All Projects</button>
         <button class="filter-chip" data-filter="Data Analytics">Data Analytics</button>
-        <button class="filter-chip badge-future" data-filter="Machine Learning">Machine Learning (Coming Soon)</button>
         <button class="filter-chip badge-future" data-filter="Data Science">Data Science (Coming Soon)</button>
+        <button class="filter-chip badge-future" data-filter="Machine Learning">Machine Learning (Coming Soon)</button>
       </div>
+
+      <label class="project-search">
+        <span class="visually-hidden">Search projects</span>
+        <input id="project-search-input" type="search" placeholder="Search projects or tools..." autocomplete="off">
+      </label>
+      <p class="search-status" id="project-search-status" aria-live="polite"></p>
 
       <!-- Projects Container -->
       <div class="projects-grid" id="projects-container">
-        <!-- Rendered dynamically from window.PROJECTS_DATA -->
+        <!-- Rendered dynamically from data/projects.json -->
       </div>
     </div>
   </section>
@@ -1680,7 +287,7 @@
   <!-- ===================================================================
        EXPERIENCE SECTION (Timeline)
        =================================================================== -->
-  <section class="section-spacing" id="experience" style="background: var(--bg-surface);">
+  <section class="section-spacing section-surface" id="experience">
     <div class="container">
       <div class="section-header">
         <span class="badge-pill">Career</span>
@@ -1709,7 +316,7 @@
           <div class="timeline-node"></div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <h3 class="timeline-role">B.Tech in Electronics & Communication (ELCE)</h3>
+              <h3 class="timeline-role">B.Tech in Electronics &amp; Communication (ELCE)</h3>
               <span class="timeline-date">Sep 2024 – Jul 2028</span>
             </div>
             <div class="timeline-company">ABES Engineering College, AKTU &nbsp;·&nbsp; CGPA: 8.0</div>
@@ -1725,6 +332,23 @@
     </div>
   </section>
 
+  <section class="section-spacing" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill">Academic Background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <article class="timeline-card">
+        <div class="timeline-header">
+          <h3 class="timeline-role">B.Tech in Electronics &amp; Communication (ELCE)</h3>
+          <span class="timeline-date">Sep 2024 – Jul 2028</span>
+        </div>
+        <div class="timeline-company">ABES Engineering College, AKTU · CGPA: 8.0</div>
+        <p class="project-desc">Class 12th (CBSE) – Khalsa Mont. Sr. Sec. School, 2022 — 85.4%. Class 10th (CBSE) – Khalsa Mont. Sr. Sec. School, 2020 — 91.8%.</p>
+      </article>
+    </div>
+  </section>
+
   <!-- ===================================================================
        CERTIFICATIONS & EDUCATION SECTION
        =================================================================== -->
@@ -1732,7 +356,7 @@
     <div class="container">
       <div class="section-header">
         <span class="badge-pill">Credentials</span>
-        <h2 class="section-title">Certifications & <span class="gradient-text">Education</span></h2>
+        <h2 class="section-title">Certifications &amp; <span class="gradient-text">Education</span></h2>
         <p class="section-subtitle">Continuous learning and validated technical mastery.</p>
       </div>
 
@@ -1742,10 +366,46 @@
     </div>
   </section>
 
+  <section class="section-spacing section-surface" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill">At a glance</span>
+        <h2 class="section-title">Data <span class="gradient-text">in Numbers</span></h2>
+      </div>
+      <div class="stats-strip">
+        <article><strong data-count="2" data-suffix="+">0</strong><span>Analytics projects</span></article>
+        <article><strong data-count="13">0</strong><span>Tools and methods</span></article>
+        <article><strong data-count="2" data-suffix="">0</strong><span>Years at ABES / AKTU</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill">Kind words</span>
+        <h2 class="section-title">Testimonials</h2>
+        <p class="section-subtitle">Testimonials will be added here when available.</p>
+      </div>
+      <div class="content-placeholder"><article><h3>Coming soon</h3><p>Professional recommendations and project feedback will appear here.</p></article></div>
+    </div>
+  </section>
+
+  <section class="section-spacing section-surface" id="insights">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-pill">Notes &amp; learnings</span>
+        <h2 class="section-title">Blog &amp; Insights</h2>
+        <p class="section-subtitle">A space for practical notes on analytics, visualization, and learning.</p>
+      </div>
+      <div class="content-placeholder"><article><h3>Articles coming soon</h3><p>New writing will be shared here as it is published.</p></article></div>
+    </div>
+  </section>
+
   <!-- ===================================================================
        CONTACT SECTION
        =================================================================== -->
-  <section class="section-spacing" id="contact" style="background: var(--bg-surface);">
+  <section class="section-spacing section-surface" id="contact">
     <div class="container">
       <div class="section-header">
         <span class="badge-pill">Inquiries</span>
@@ -1756,7 +416,7 @@
       <div class="contact-grid">
         <div class="contact-info">
           <h3>Reach Out Directly</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">
+          <p class="contact-intro">
             I'm currently open to full-time Data Analyst and Junior Data Scientist roles, contract projects, and collaborating on open-source data pipelines.
           </p>
 
@@ -1796,30 +456,31 @@
           <form id="portfolio-contact-form">
             <div class="form-group">
               <label for="form-name" class="form-label">Your Name</label>
-              <input type="text" id="form-name" class="form-control" placeholder="Alex Morgan" required>
+              <input type="text" id="form-name" name="name" class="form-control" placeholder="Alex Morgan" autocomplete="name" required>
             </div>
             <div class="form-group">
               <label for="form-email" class="form-label">Email Address</label>
-              <input type="email" id="form-email" class="form-control" placeholder="alex@company.com" required>
+              <input type="email" id="form-email" name="email" class="form-control" placeholder="alex@company.com" autocomplete="email" required>
             </div>
             <div class="form-group">
               <label for="form-subject" class="form-label">Subject</label>
-              <input type="text" id="form-subject" class="form-control" placeholder="Data Analyst Opportunity / Inquiry" required>
+              <input type="text" id="form-subject" name="subject" class="form-control" placeholder="Data Analyst Opportunity / Inquiry" required>
             </div>
             <div class="form-group">
               <label for="form-message" class="form-label">Message</label>
-              <textarea id="form-message" class="form-control" rows="4" placeholder="Hi, I saw your portfolio and would love to discuss..." required></textarea>
+              <textarea id="form-message" name="message" class="form-control" rows="4" placeholder="Hi, I saw your portfolio and would love to discuss..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <button type="submit" class="btn btn-primary contact-submit">
               <span>Send Message</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </button>
-            <div id="form-status-msg" class="form-status"></div>
+            <div id="form-status-msg" class="form-status" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ===================================================================
        FOOTER
@@ -1827,7 +488,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-copy">
-        &copy; <span id="current-year">2026</span> <strong id="footer-owner-name">[YOUR NAME]</strong>. Built for Data Analytics & Data Science.
+        &copy; <span id="current-year">2026</span> <strong id="footer-owner-name">[YOUR NAME]</strong>. Built for Data Analytics &amp; Data Science.
       </div>
 
       <div class="footer-socials">
@@ -1852,12 +513,12 @@
   <!-- ===================================================================
        PROJECT DETAIL MODAL (With Interactive Chart)
        =================================================================== -->
-  <div class="modal-backdrop" id="project-detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
-    <div class="modal-window">
+  <div class="modal-backdrop" id="project-detail-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-project-title">
+    <div class="modal-window" tabindex="-1">
       <div class="modal-header">
         <div>
-          <span class="badge-pill" id="modal-category-badge" style="margin-bottom: 0.4rem;">Category</span>
-          <h3 id="modal-project-title" style="font-size: 1.45rem;">Project Title</h3>
+          <span class="badge-pill modal-category-badge" id="modal-category-badge">Category</span>
+          <h3 id="modal-project-title" class="modal-project-heading">Project Title</h3>
         </div>
         <button class="modal-close-btn" id="modal-close-button" aria-label="Close modal">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -1876,22 +537,20 @@
           <div class="modal-chart-header">
             <div>
               <strong id="modal-chart-name">Sample Performance Metric</strong>
-              <div style="font-size: 0.8rem; color: var(--text-faint);" id="modal-chart-desc">Interactive Metric Breakdown</div>
+              <div id="modal-chart-desc" class="modal-chart-description">Interactive Metric Breakdown</div>
             </div>
             <span class="badge-pill" id="modal-chart-type-badge">Chart</span>
           </div>
           <div class="chart-canvas-wrapper">
-            <canvas id="modal-chart-canvas"></canvas>
+            <canvas id="modal-chart-canvas" role="img" aria-label="Project sample data chart"></canvas>
           </div>
         </div>
 
-        <div class="modal-section-title">Key Insight & Business Impact</div>
-        <div class="project-insight-box" id="modal-insight-text">
-          Quantified insight and business achievement.
-        </div>
+        <div class="modal-section-title">Key Insight &amp; Business Impact</div>
+        <p class="project-insight-box" id="modal-insight-text">Quantified insight and business achievement.</p>
 
-        <div class="modal-section-title">Tools & Technologies</div>
-        <div class="project-tools" id="modal-tools-list" style="margin-bottom: 0;"></div>
+        <div class="modal-section-title">Tools &amp; Technologies</div>
+        <div class="project-tools modal-tools-list-empty" id="modal-tools-list"></div>
 
         <div class="modal-footer-actions">
           <a href="#" id="modal-github-link" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
@@ -1910,855 +569,6 @@
   <!-- ===================================================================
        JAVASCRIPT: CONFIGURATION & LOGIC
        =================================================================== -->
-  <script>
-    /* ===================================================================
-       1. PERSONAL CONFIGURATION (EASILY EDIT YOUR INFORMATION HERE)
-       =================================================================== */
-    const OWNER_CONFIG = {
-      name: "Chirag Mittal",
-      title: "Data Analyst",
-      futureTitle: "Future Data Scientist",
-      location: "Ghaziabad, Uttar Pradesh, India",
-      bioShort: "Turning raw data into clear, actionable decisions — through Python, SQL, Power BI, and smart statistical thinking.",
-      bioAbout: "I'm a B.Tech student in Electronics & Communication at ABES Engineering College (AKTU), passionate about data analytics and AI. With hands-on experience in Python, SQL, Pandas, Power BI, and data visualization, I build dashboards and analytical pipelines that uncover real business insights. I recently interned as an AI Filmmaking Intern at ENRAI Studio, where I worked with Generative AI tools and analyzed AI-generated media for quality and consistency.",
-      education: "B.Tech in ELCE, ABES Engineering College (AKTU), 2028",
-      email: "chiragmittalabes@gmail.com",
-      linkedin: "https://linkedin.com/in/chirag-grow",
-      github: "https://github.com/chiraggrow",
-      resumeUrl: "Chirag_Mittal_Resume.pdf"  // Actual resume PDF in same folder
-    };
-
-    /* ===================================================================
-       2. DATA-DRIVEN PROJECTS ARRAY (EDIT & ADD NEW PROJECTS HERE)
-       Each project has:
-       id, title, category, shortDescription, problem, approach,
-       toolsUsed, keyInsight, chartType, chartData, githubLink, dashboardLink, thumbnail
-       =================================================================== */
-    const PROJECTS_DATA = [
-      {
-        id: "project-1",
-        title: "Bank Branch Performance Dashboard",
-        category: "Data Analytics",
-        shortDescription: "Analyzed banking branch KPIs — deposits, loans, profitability, and complaints — with an interactive Streamlit dashboard and sentiment analysis.",
-        problem: "Branch managers lacked a unified view of financial performance across deposits, loans, expenses, revenue, and customer satisfaction — making it hard to spot underperforming branches quickly.",
-        approach: "Loaded and cleaned multi-branch transactional data using Pandas. Calculated key KPIs: profit margin, loan-to-deposit ratio, and complaint rate. Built an interactive Streamlit dashboard for real-time filtering and added TextBlob-powered sentiment analysis on customer feedback comments.",
-        toolsUsed: ["Python", "Pandas", "Streamlit", "TextBlob", "Matplotlib"],
-        keyInsight: "Identified 3 underperforming branches with negative profit margins — flagging them for cost-optimization reviews that reduced operational expenses.",
-        chartType: "bar",
-        chartData: {
-          labels: ["Deposits", "Loans", "Revenue", "Expenses", "Complaints"],
-          values: [87, 73, 91, 55, 34],
-          unit: "KPI Performance Score"
-        },
-        githubLink: "https://github.com/chiraggrow",
-        dashboardLink: "https://github.com/chiraggrow",
-        thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80"
-      },
-      {
-        id: "project-2",
-        title: "Weather Monitor (IoT Dashboard)",
-        category: "Data Analytics",
-        shortDescription: "Designed a real-time IoT weather station that streams live temperature & humidity data to a mobile app via Blynk.",
-        problem: "No low-cost, real-time solution existed for continuously monitoring indoor room climate data on a mobile device without expensive commercial sensors.",
-        approach: "Built an Arduino-based IoT weather station using DHT11 temperature/humidity sensors. Integrated with the Blynk IoT platform to stream live sensor readings to a mobile dashboard in real-time. Calibrated sensor thresholds for alert notifications.",
-        toolsUsed: ["Arduino", "IoT", "Blynk", "C++", "DHT11 Sensor"],
-        keyInsight: "Achieved live sensor data streaming with <2 second latency to mobile, demonstrating a complete data pipeline from physical sensor to digital dashboard.",
-        chartType: "line",
-        chartData: {
-          labels: ["6AM", "9AM", "12PM", "3PM", "6PM", "9PM"],
-          values: [22, 24, 29, 31, 28, 25],
-          unit: "Temperature (°C)"
-        },
-        githubLink: "https://github.com/chiraggrow",
-        dashboardLink: "https://github.com/chiraggrow",
-        thumbnail: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&auto=format&fit=crop&q=80"
-      }
-    ];
-
-    /* ===================================================================
-       3. SKILLS DATA ARRAY (CATEGORIZED)
-       =================================================================== */
-    const SKILLS_DATA = [
-      { name: "Python", category: "code", level: 85 },
-      { name: "SQL (MySQL)", category: "query", level: 88 },
-      { name: "Pandas & NumPy", category: "code", level: 85 },
-      { name: "Matplotlib & Seaborn", category: "bi", level: 82 },
-      { name: "Microsoft Excel", category: "bi", level: 88 },
-      { name: "Power BI", category: "bi", level: 80 },
-      { name: "Data Cleaning & Wrangling", category: "stats", level: 90 },
-      { name: "Exploratory Data Analysis (EDA)", category: "stats", level: 87 },
-      { name: "Statistical Analysis", category: "stats", level: 82 },
-      { name: "Dashboard Development & KPI Reporting", category: "bi", level: 80 },
-      { name: "Jupyter Notebook / Google Colab", category: "code", level: 90 },
-      { name: "Git & GitHub", category: "query", level: 78 },
-      { name: "Prompt Engineering & Generative AI", category: "code", level: 80, tag: "AI" }
-    ];
-
-    /* ===================================================================
-       4. CERTIFICATIONS DATA
-       =================================================================== */
-    const CERTIFICATIONS_DATA = [
-      {
-        title: "SQL Course",
-        issuer: "Kaggle",
-        year: "2024",
-        link: "https://www.kaggle.com/learn/certification"
-      },
-      {
-        title: "Introduction to Data Analytics",
-        issuer: "Actual Issuer",
-        year: "2024",
-        link: "#"
-      },
-      {
-        title: "Python Programming Course",
-        issuer: "Scaler",
-        year: "2024",
-        link: "#"
-      },
-      {
-        title: "Prompt Engineering",
-        issuer: "Actual Issuer",
-        year: "2024",
-        link: "#"
-      }
-    ];
-
-    /* ===================================================================
-       5. INITIALIZATION & DOM BINDINGS
-       =================================================================== */
-    document.addEventListener("DOMContentLoaded", () => {
-      populateOwnerInfo();
-      renderSkills("all");
-      renderProjects("all");
-      renderCertifications();
-      initTheme();
-      initHero3D();
-      init3DTilt();
-      initFilters();
-      initModal();
-      initContactForm();
-      initBackToTop();
-      observeAnimatedElements();
-    });
-
-    // Populate Owner Info dynamically
-    function populateOwnerInfo() {
-      const setText = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = val;
-      };
-
-      setText("nav-owner-name", OWNER_CONFIG.name);
-      setText("hero-owner-name", OWNER_CONFIG.name);
-      setText("hero-owner-title", OWNER_CONFIG.title);
-      setText("hero-bio-short", OWNER_CONFIG.bioShort);
-      setText("about-bio-text", OWNER_CONFIG.bioAbout);
-      setText("about-role", OWNER_CONFIG.title);
-      setText("about-location", OWNER_CONFIG.location);
-      setText("about-education", OWNER_CONFIG.education);
-      setText("footer-owner-name", OWNER_CONFIG.name);
-      setText("contact-email-display", OWNER_CONFIG.email);
-      setText("contact-linkedin-display", OWNER_CONFIG.linkedin.replace("https://", ""));
-      setText("contact-github-display", OWNER_CONFIG.github.replace("https://", ""));
-
-      const resumeBtn = document.getElementById("resume-download-btn");
-      if (resumeBtn) resumeBtn.href = OWNER_CONFIG.resumeUrl;
-
-      const emailLink = document.getElementById("contact-email-link");
-      if (emailLink) emailLink.href = `mailto:${OWNER_CONFIG.email}`;
-
-      const liLink = document.getElementById("contact-linkedin-link");
-      if (liLink) liLink.href = OWNER_CONFIG.linkedin;
-
-      const ghLink = document.getElementById("contact-github-link");
-      if (ghLink) ghLink.href = OWNER_CONFIG.github;
-
-      const footGh = document.getElementById("footer-gh-link");
-      if (footGh) footGh.href = OWNER_CONFIG.github;
-      const footLi = document.getElementById("footer-li-link");
-      if (footLi) footLi.href = OWNER_CONFIG.linkedin;
-      const footMail = document.getElementById("footer-mail-link");
-      if (footMail) footMail.href = `mailto:${OWNER_CONFIG.email}`;
-    }
-
-    /* ===================================================================
-       6. THEME TOGGLE (DARK / LIGHT)
-       =================================================================== */
-    function initTheme() {
-      const toggleBtn = document.getElementById("theme-toggle-btn");
-      const currentTheme = localStorage.getItem("portfolio-theme") || "dark";
-      document.documentElement.setAttribute("data-theme", currentTheme);
-
-      toggleBtn.addEventListener("click", () => {
-        const activeTheme = document.documentElement.getAttribute("data-theme");
-        const nextTheme = activeTheme === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", nextTheme);
-        localStorage.setItem("portfolio-theme", nextTheme);
-        
-        // Update 3D scene light intensity or background if active
-        if (window.update3DTheme) window.update3DTheme(nextTheme);
-      });
-
-      // Mobile Menu Toggle
-      const mobileToggle = document.getElementById("mobile-menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-      if (mobileToggle && navLinks) {
-        mobileToggle.addEventListener("click", () => {
-          navLinks.classList.toggle("open");
-        });
-        navLinks.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => navLinks.classList.remove("open"));
-        });
-      }
-    }
-
-    /* ===================================================================
-       7. THREE.JS 3D HERO DATA MATRIX (LIGHTWEIGHT & OPTIMIZED)
-       Floating 3D glowing data bars & particle network with mouse parallax
-       =================================================================== */
-    function initHero3D() {
-      const container = document.getElementById("hero-canvas-container");
-      if (!container || typeof THREE === "undefined") return;
-
-      // Check prefers-reduced-motion
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
-      }
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-      camera.position.set(0, 5, 22);
-
-      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      container.appendChild(renderer.domElement);
-
-      // Ambient & directional lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-      scene.add(ambientLight);
-
-      const dirLight = new THREE.DirectionalLight(0x00f2fe, 1.2);
-      dirLight.position.set(10, 20, 15);
-      scene.add(dirLight);
-
-      // Group of 3D Data Bars (Grid cluster representing analytics data)
-      const dataGroup = new THREE.Group();
-      scene.add(dataGroup);
-
-      const gridSize = 7;
-      const spacing = 1.6;
-      const bars = [];
-      const barGeometry = new THREE.BoxGeometry(0.8, 1, 0.8);
-
-      const tealMaterial = new THREE.MeshStandardMaterial({
-        color: 0x00f2fe,
-        metalness: 0.2,
-        roughness: 0.3,
-        transparent: true,
-        opacity: 0.85
-      });
-
-      const violetMaterial = new THREE.MeshStandardMaterial({
-        color: 0x8b5cf6,
-        metalness: 0.3,
-        roughness: 0.4,
-        transparent: true,
-        opacity: 0.85
-      });
-
-      // Populate 3D Data Bar Matrix
-      for (let x = -gridSize / 2; x < gridSize / 2; x++) {
-        for (let z = -gridSize / 2; z < gridSize / 2; z++) {
-          const isViolet = (x + z) % 3 === 0;
-          const bar = new THREE.Mesh(barGeometry, isViolet ? violetMaterial : tealMaterial);
-          bar.position.set(x * spacing, 0, z * spacing);
-          bar.userData = {
-            baseHeight: Math.random() * 4 + 1.5,
-            speed: Math.random() * 0.03 + 0.015,
-            offset: Math.random() * Math.PI * 2
-          };
-          dataGroup.add(bar);
-          bars.push(bar);
-        }
-      }
-
-      // Particle Data Cloud
-      const particleCount = 120;
-      const particleGeo = new THREE.BufferGeometry();
-      const posArray = new Float32Array(particleCount * 3);
-
-      for (let i = 0; i < particleCount * 3; i += 3) {
-        posArray[i] = (Math.random() - 0.5) * 35;
-        posArray[i + 1] = Math.random() * 15 - 2;
-        posArray[i + 2] = (Math.random() - 0.5) * 25;
-      }
-      particleGeo.setAttribute("position", new THREE.BufferAttribute(posArray, 3));
-
-      const particleMat = new THREE.PointsMaterial({
-        size: 0.22,
-        color: 0x00f2fe,
-        transparent: true,
-        opacity: 0.6
-      });
-      const particleSystem = new THREE.Points(particleGeo, particleMat);
-      scene.add(particleSystem);
-
-      // Mouse Parallax & Movement tracking
-      let mouseX = 0;
-      let mouseY = 0;
-      let targetRotX = 0.35;
-      let targetRotY = -0.4;
-
-      window.addEventListener("mousemove", (e) => {
-        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-        mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-        targetRotY = mouseX * 0.45;
-        targetRotX = 0.35 - mouseY * 0.25;
-      });
-
-      // Pause rendering when tab is hidden or hero is offscreen
-      let isHeroVisible = true;
-      const heroEl = document.getElementById("hero");
-      const heroObserver = new IntersectionObserver((entries) => {
-        isHeroVisible = entries[0].isIntersecting;
-      }, { threshold: 0.1 });
-      if (heroEl) heroObserver.observe(heroEl);
-
-      // Render Loop
-      let clock = new THREE.Clock();
-      function animate() {
-        requestAnimationFrame(animate);
-
-        if (!isHeroVisible || document.hidden) return;
-
-        const elapsedTime = clock.getElapsedTime();
-
-        // Animate individual data bars with sine wave heights
-        for (let i = 0; i < bars.length; i++) {
-          const bar = bars[i];
-          const height = bar.userData.baseHeight + Math.sin(elapsedTime * 2.5 * bar.userData.speed + bar.userData.offset) * 2;
-          bar.scale.y = Math.max(0.2, height);
-          bar.position.y = bar.scale.y / 2;
-        }
-
-        // Gentle cluster rotation + mouse response
-        dataGroup.rotation.y += (targetRotY - dataGroup.rotation.y) * 0.05;
-        dataGroup.rotation.x += (targetRotX - dataGroup.rotation.x) * 0.05;
-
-        // Subtle particle drift
-        particleSystem.rotation.y = elapsedTime * 0.04;
-
-        renderer.render(scene, camera);
-      }
-      animate();
-
-      // Window resize handling
-      window.addEventListener("resize", () => {
-        if (!container) return;
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      });
-    }
-
-    /* ===================================================================
-       8. 3D CARD TILT EFFECT (CSS PERSPECTIVE ON MOUSE)
-       =================================================================== */
-    function init3DTilt() {
-      // Tilt for Hero KPI Card
-      const heroCard = document.getElementById("hero-tilt-card");
-      if (heroCard) {
-        attachTilt(heroCard, 15);
-      }
-    }
-
-    function attachTilt(element, maxTiltDeg = 12) {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      element.addEventListener("mousemove", (e) => {
-        const rect = element.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -maxTiltDeg;
-        const rotateY = ((x - centerX) / centerX) * maxTiltDeg;
-
-        element.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
-      });
-
-      element.addEventListener("mouseleave", () => {
-        element.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
-      });
-    }
-
-    /* ===================================================================
-       9. SKILLS RENDERING
-       =================================================================== */
-    function renderSkills(category = "all") {
-      const container = document.getElementById("skills-container");
-      if (!container) return;
-
-      const filtered = category === "all" 
-        ? SKILLS_DATA 
-        : SKILLS_DATA.filter(s => s.category === category);
-
-      container.innerHTML = filtered.map(s => `
-        <div class="skill-card">
-          <div class="skill-info">
-            <span class="skill-name">
-              ${s.name}
-              ${s.tag ? `<span class="badge-pill" style="font-size: 0.65rem; padding: 0.15rem 0.5rem; margin-bottom: 0;">${s.tag}</span>` : ""}
-            </span>
-            <span class="skill-level-text">${s.level}%</span>
-          </div>
-          <div class="skill-bar-bg">
-            <div class="skill-bar-fill" data-width="${s.level}%"></div>
-          </div>
-        </div>
-      `).join("");
-
-      // Trigger width animation
-      setTimeout(() => {
-        container.querySelectorAll(".skill-bar-fill").forEach(bar => {
-          bar.style.width = bar.getAttribute("data-width");
-        });
-      }, 50);
-    }
-
-    /* ===================================================================
-       10. PROJECTS RENDERING & DETAIL MODAL
-       =================================================================== */
-    function renderProjects(filter = "all") {
-      const container = document.getElementById("projects-container");
-      if (!container) return;
-
-      if (filter === "Machine Learning" || filter === "Data Science") {
-        container.innerHTML = `
-          <div class="project-card-coming-soon" style="grid-column: 1 / -1;">
-            <div class="coming-soon-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Data Science & ML Pipeline (In Active Development)</h3>
-            <p style="color: var(--text-muted); max-width: 550px; margin-bottom: 1.5rem;">
-              Currently training and tuning XGBoost customer churn classifiers and NLP sentiment extraction models. Live interactive demos and notebook repositories arriving soon.
-            </p>
-            <div class="hero-tags">
-              <span class="tag-badge">Scikit-Learn</span>
-              <span class="tag-badge">XGBoost</span>
-              <span class="tag-badge">Feature Engineering</span>
-              <span class="tag-badge">FastAPI</span>
-            </div>
-          </div>
-        `;
-        return;
-      }
-
-      const projects = filter === "all" 
-        ? PROJECTS_DATA 
-        : PROJECTS_DATA.filter(p => p.category === filter);
-
-      container.innerHTML = projects.map(p => `
-        <article class="project-card" data-project-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.title}">
-          <div class="project-thumb">
-            <img src="${p.thumbnail}" alt="${p.title}" loading="lazy" width="600" height="340">
-            <span class="project-badge-cat">${p.category}</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">${p.title}</h3>
-            <p class="project-desc">${p.shortDescription}</p>
-            
-            <div class="project-insight-box">
-              <strong>Key Impact:</strong> ${p.keyInsight}
-            </div>
-
-            <div class="project-tools">
-              ${p.toolsUsed.map(t => `<span class="tool-chip">${t}</span>`).join("")}
-            </div>
-
-            <div class="project-card-footer">
-              <span class="project-btn-detail">
-                Explore Analytics & Chart
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </div>
-          </div>
-        </article>
-      `).join("");
-
-      // Attach click events and 3D tilt to cards
-      container.querySelectorAll(".project-card").forEach(card => {
-        attachTilt(card, 8);
-        card.addEventListener("click", () => {
-          const pId = card.getAttribute("data-project-id");
-          openProjectModal(pId);
-        });
-        card.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            const pId = card.getAttribute("data-project-id");
-            openProjectModal(pId);
-          }
-        });
-      });
-    }
-
-    /* Filter Chips Event Binding */
-    function initFilters() {
-      // Skills tabs
-      const skillTabs = document.querySelectorAll("#skill-tabs .tab-btn");
-      skillTabs.forEach(btn => {
-        btn.addEventListener("click", () => {
-          skillTabs.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-          renderSkills(btn.getAttribute("data-category"));
-        });
-      });
-
-      // Project filter chips
-      const projectChips = document.querySelectorAll("#project-filters .filter-chip");
-      projectChips.forEach(chip => {
-        chip.addEventListener("click", () => {
-          projectChips.forEach(c => c.classList.remove("active"));
-          chip.classList.add("active");
-          renderProjects(chip.getAttribute("data-filter"));
-        });
-      });
-    }
-
-    /* ===================================================================
-       11. MODAL & INTERACTIVE NATIVE CANVAS CHART
-       =================================================================== */
-    let currentModalChart = null;
-
-    function initModal() {
-      const modalBackdrop = document.getElementById("project-detail-modal");
-      const closeBtn = document.getElementById("modal-close-button");
-
-      closeBtn.addEventListener("click", closeModal);
-      modalBackdrop.addEventListener("click", (e) => {
-        if (e.target === modalBackdrop) closeModal();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modalBackdrop.classList.contains("open")) {
-          closeModal();
-        }
-      });
-    }
-
-    function openProjectModal(projectId) {
-      const project = PROJECTS_DATA.find(p => p.id === projectId);
-      if (!project) return;
-
-      const modal = document.getElementById("project-detail-modal");
-      document.getElementById("modal-project-title").textContent = project.title;
-      document.getElementById("modal-category-badge").textContent = project.category;
-      document.getElementById("modal-problem-text").textContent = project.problem;
-      document.getElementById("modal-approach-text").textContent = project.approach;
-      document.getElementById("modal-insight-text").innerHTML = `<strong>Key Result:</strong> ${project.keyInsight}`;
-      document.getElementById("modal-chart-name").textContent = `${project.title} - Sample Telemetry`;
-      document.getElementById("modal-chart-desc").textContent = `Distribution of ${project.chartData.unit}`;
-      document.getElementById("modal-chart-type-badge").textContent = `${project.chartType.toUpperCase()} CHART`;
-
-      // Tools
-      const toolsEl = document.getElementById("modal-tools-list");
-      toolsEl.innerHTML = project.toolsUsed.map(t => `<span class="tool-chip">${t}</span>`).join("");
-
-      // Action Links
-      document.getElementById("modal-github-link").href = project.githubLink;
-      document.getElementById("modal-dashboard-link").href = project.dashboardLink;
-
-      modal.classList.add("open");
-      document.body.style.overflow = "hidden"; // Lock background scroll
-
-      // Draw Interactive Canvas Chart
-      setTimeout(() => {
-        drawProjectChart(project.chartType, project.chartData);
-      }, 100);
-    }
-
-    function closeModal() {
-      const modal = document.getElementById("project-detail-modal");
-      modal.classList.remove("open");
-      document.body.style.overflow = "";
-    }
-
-    /* Native Clean Canvas Chart Renderer (Zero bloat, high performance) */
-    function drawProjectChart(chartType, data) {
-      const canvas = document.getElementById("modal-chart-canvas");
-      if (!canvas) return;
-      const ctx = canvas.getContext("2d");
-
-      // Set high-dpi canvas size
-      const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
-
-      const width = rect.width;
-      const height = rect.height;
-
-      ctx.clearRect(0, 0, width, height);
-
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      const primaryColor = isDark ? "#00f2fe" : "#0284c7";
-      const secondaryColor = isDark ? "#8b5cf6" : "#6366f1";
-      const textColor = isDark ? "#94a3b8" : "#475569";
-      const gridColor = isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.08)";
-
-      if (chartType === "bar") {
-        // Draw Bar Chart
-        const padding = { top: 25, bottom: 35, left: 40, right: 20 };
-        const chartW = width - padding.left - padding.right;
-        const chartH = height - padding.top - padding.bottom;
-        const maxVal = Math.max(...data.values) * 1.15;
-        const barWidth = chartW / data.labels.length * 0.55;
-
-        // Draw horizontal grid lines
-        ctx.strokeStyle = gridColor;
-        ctx.lineWidth = 1;
-        for (let i = 0; i <= 4; i++) {
-          const y = padding.top + (chartH / 4) * i;
-          ctx.beginPath();
-          ctx.moveTo(padding.left, y);
-          ctx.lineTo(width - padding.right, y);
-          ctx.stroke();
-
-          // Axis labels
-          ctx.fillStyle = textColor;
-          ctx.font = "11px Inter, sans-serif";
-          ctx.textAlign = "right";
-          const labelVal = Math.round(maxVal - (maxVal / 4) * i);
-          ctx.fillText(labelVal, padding.left - 8, y + 4);
-        }
-
-        // Draw Bars
-        data.values.forEach((val, idx) => {
-          const barH = (val / maxVal) * chartH;
-          const x = padding.left + (idx * (chartW / data.labels.length)) + (chartW / data.labels.length - barWidth) / 2;
-          const y = padding.top + chartH - barH;
-
-          // Gradient bar fill
-          const grad = ctx.createLinearGradient(0, y, 0, y + barH);
-          grad.addColorStop(0, primaryColor);
-          grad.addColorStop(1, secondaryColor);
-          ctx.fillStyle = grad;
-
-          // Rounded bar top
-          ctx.beginPath();
-          ctx.roundRect ? ctx.roundRect(x, y, barWidth, barH, [4, 4, 0, 0]) : ctx.rect(x, y, barWidth, barH);
-          ctx.fill();
-
-          // Value above bar
-          ctx.fillStyle = isDark ? "#ffffff" : "#0f172a";
-          ctx.font = "bold 11px Inter, sans-serif";
-          ctx.textAlign = "center";
-          ctx.fillText(val, x + barWidth / 2, y - 6);
-
-          // X-axis label
-          ctx.fillStyle = textColor;
-          ctx.font = "11px Inter, sans-serif";
-          ctx.fillText(data.labels[idx], x + barWidth / 2, height - 12);
-        });
-
-      } else if (chartType === "line") {
-        // Draw Line Chart
-        const padding = { top: 25, bottom: 35, left: 40, right: 25 };
-        const chartW = width - padding.left - padding.right;
-        const chartH = height - padding.top - padding.bottom;
-        const maxVal = Math.max(...data.values) * 1.2;
-        const stepX = chartW / (data.labels.length - 1);
-
-        // Grid
-        ctx.strokeStyle = gridColor;
-        for (let i = 0; i <= 3; i++) {
-          const y = padding.top + (chartH / 3) * i;
-          ctx.beginPath();
-          ctx.moveTo(padding.left, y);
-          ctx.lineTo(width - padding.right, y);
-          ctx.stroke();
-        }
-
-        // Line Points
-        const points = data.values.map((v, i) => ({
-          x: padding.left + i * stepX,
-          y: padding.top + chartH - (v / maxVal) * chartH
-        }));
-
-        // Area under line
-        ctx.beginPath();
-        ctx.moveTo(points[0].x, padding.top + chartH);
-        points.forEach(pt => ctx.lineTo(pt.x, pt.y));
-        ctx.lineTo(points[points.length - 1].x, padding.top + chartH);
-        ctx.closePath();
-
-        const areaGrad = ctx.createLinearGradient(0, padding.top, 0, padding.top + chartH);
-        areaGrad.addColorStop(0, isDark ? "rgba(0, 242, 254, 0.3)" : "rgba(2, 132, 199, 0.2)");
-        areaGrad.addColorStop(1, "transparent");
-        ctx.fillStyle = areaGrad;
-        ctx.fill();
-
-        // Stroke line
-        ctx.beginPath();
-        ctx.strokeStyle = primaryColor;
-        ctx.lineWidth = 3;
-        points.forEach((pt, i) => i === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y));
-        ctx.stroke();
-
-        // Points & Labels
-        points.forEach((pt, i) => {
-          ctx.fillStyle = primaryColor;
-          ctx.beginPath();
-          ctx.arc(pt.x, pt.y, 4.5, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.fillStyle = isDark ? "#ffffff" : "#0f172a";
-          ctx.font = "bold 11px Inter, sans-serif";
-          ctx.textAlign = "center";
-          ctx.fillText(data.values[i], pt.x, pt.y - 10);
-
-          ctx.fillStyle = textColor;
-          ctx.font = "11px Inter, sans-serif";
-          ctx.fillText(data.labels[i], pt.x, height - 12);
-        });
-
-      } else {
-        // Draw Donut Chart
-        const centerX = width / 2;
-        const centerY = height / 2 - 10;
-        const outerR = Math.min(centerX, centerY) * 0.78;
-        const innerR = outerR * 0.55;
-        const total = data.values.reduce((a, b) => a + b, 0);
-
-        let startAngle = -Math.PI / 2;
-        const colors = [primaryColor, secondaryColor, "#10b981", "#f59e0b", "#ec4899"];
-
-        data.values.forEach((val, i) => {
-          const sliceAngle = (val / total) * Math.PI * 2;
-          ctx.beginPath();
-          ctx.arc(centerX, centerY, outerR, startAngle, startAngle + sliceAngle);
-          ctx.arc(centerX, centerY, innerR, startAngle + sliceAngle, startAngle, true);
-          ctx.closePath();
-          ctx.fillStyle = colors[i % colors.length];
-          ctx.fill();
-
-          startAngle += sliceAngle;
-        });
-
-        // Center Text
-        ctx.fillStyle = isDark ? "#ffffff" : "#0f172a";
-        ctx.font = "bold 15px Plus Jakarta Sans, sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText("100%", centerX, centerY + 5);
-
-        // Legend
-        const legendY = height - 15;
-        const itemSpacing = width / data.labels.length;
-        data.labels.forEach((lbl, i) => {
-          const x = i * itemSpacing + itemSpacing / 2;
-          ctx.fillStyle = colors[i % colors.length];
-          ctx.beginPath();
-          ctx.arc(x - 25, legendY - 3, 4, 0, Math.PI * 2);
-          ctx.fill();
-
-          ctx.fillStyle = textColor;
-          ctx.font = "11px Inter, sans-serif";
-          ctx.textAlign = "left";
-          ctx.fillText(`${lbl} (${data.values[i]}%)`, x - 17, legendY);
-        });
-      }
-    }
-
-    /* ===================================================================
-       12. CERTIFICATIONS RENDERING
-       ================================================================== */
-    function renderCertifications() {
-      const container = document.getElementById("cert-edu-container");
-      if (!container) return;
-
-      container.innerHTML = CERTIFICATIONS_DATA.map(c => `
-        <div class="cert-card">
-          <div class="cert-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-          </div>
-          <div>
-            <h3 class="cert-title">${c.title}</h3>
-            <div class="cert-issuer">${c.issuer}</div>
-            <a href="${c.link}" class="btn-sm btn-secondary" style="display: inline-block; padding: 0.25rem 0.6rem; font-size: 0.78rem;" target="_blank" rel="noopener noreferrer">Verify Credential ↗</a>
-          </div>
-        </div>
-      `).join("");
-    }
-
-    /* ===================================================================
-       13. CONTACT FORM SUBMISSION
-       =================================================================== */
-    function initContactForm() {
-      const form = document.getElementById("portfolio-contact-form");
-      const statusMsg = document.getElementById("form-status-msg");
-      if (!form) return;
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("form-name").value;
-        const email = document.getElementById("form-email").value;
-        const subject = document.getElementById("form-subject").value;
-        const msg = document.getElementById("form-message").value;
-
-        // Fallback: Open prefilled mailto if no API backend is configured
-        const mailtoLink = `mailto:${OWNER_CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + msg)}`;
-        
-        statusMsg.className = "form-status success";
-        statusMsg.textContent = `Thank you, ${name}! Your email client will now launch with this message drafted to ${OWNER_CONFIG.email}.`;
-        
-        setTimeout(() => {
-          window.location.href = mailtoLink;
-          form.reset();
-        }, 800);
-      });
-    }
-
-    /* ===================================================================
-       14. BACK TO TOP BUTTON
-       =================================================================== */
-    function initBackToTop() {
-      const btn = document.getElementById("back-to-top-btn");
-      if (!btn) return;
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-          btn.classList.add("visible");
-        } else {
-          btn.classList.remove("visible");
-        }
-      });
-
-      btn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
-
-    /* ===================================================================
-       15. SCROLL OBSERVER FOR STATS & REVEAL
-       =================================================================== */
-    function observeAnimatedElements() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-          }
-        });
-      }, { threshold: 0.15 });
-
-      document.querySelectorAll(".stat-card, .timeline-item, .project-card").forEach(el => {
-        observer.observe(el);
-      });
-    }
-  </script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

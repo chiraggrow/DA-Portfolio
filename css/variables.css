@@ -1,0 +1,54 @@
+:root {
+      /* EDIT ACCENT COLOR HERE: Electric Teal / Cyan */
+      --accent-primary: #00f2fe;
+      --accent-secondary: #4facfe;
+      --accent-glow: rgba(0, 242, 254, 0.35);
+      --accent-violet: #8b5cf6;
+      --accent-emerald: #10b981;
+      
+      /* Dark Theme (Default) */
+      --bg-base: #060911;
+      --bg-surface: #0c1220;
+      --bg-surface-elevated: #131b2e;
+      --bg-glass: rgba(12, 18, 32, 0.72);
+      --bg-glass-card: rgba(19, 27, 46, 0.6);
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(0, 242, 254, 0.5);
+      
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+      --glow-shadow: 0 0 25px var(--accent-glow);
+      
+      --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+[data-theme="light"] {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f1f5f9;
+      --bg-glass: rgba(255, 255, 255, 0.82);
+      --bg-glass-card: rgba(255, 255, 255, 0.85);
+      
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --border-focus: rgba(0, 242, 254, 0.8);
+      
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-faint: #94a3b8;
+      
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+      --glow-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+    }
